@@ -1,7 +1,8 @@
 use std::io::stdin;
 use std::char::from_digit;
 use std::collections::HashMap;
-const ALPHABET : [char; 32] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4'];
+const ALPHABET : [char; 32] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 
+      'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4'];
 fn search(ch : char) -> Option<usize>{
     for i in 0..32{
         if ch == ALPHABET[i]{
