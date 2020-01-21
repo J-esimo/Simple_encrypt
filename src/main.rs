@@ -35,13 +35,7 @@ fn encrypt(text_bits : &Vec<u8>, final_bits : &Vec<u8>) -> Vec<u8>{
     }
     text
 }
-fn decrypt(encrypt_bits : &Vec<u8>, final_bits : &Vec<u8>) -> Vec<u8>{
-    let mut msg : Vec<u8> = Vec::new();
-    for i in 0..encrypt_bits.len(){
-        msg.push(encrypt_bits[i] ^ final_bits[i]);
-    }
-    msg
-}
+
 fn to_ascii(encrypted : &Vec<u8>){
     let mut start = 0;
     let mut end = 5;
@@ -107,5 +101,5 @@ fn main() {
     }
     let encrypted = encrypt(&text_bits, &final_bits);
     to_ascii(&encrypted);
-    to_ascii(&decrypt(&encrypted, &final_bits));
+    to_ascii(&encrypt(&encrypted, &final_bits));
 }
